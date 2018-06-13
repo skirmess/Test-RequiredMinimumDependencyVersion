@@ -16,9 +16,7 @@ git:
 
 matrix:
   include:
-    - perl: '5.8.1'
-
-    - perl: '5.8.2'
+    - perl: '5.8.3'
 
     - perl: '5.8'
 
