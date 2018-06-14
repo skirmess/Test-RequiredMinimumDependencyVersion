@@ -15,7 +15,8 @@ Version 0.001
 
 There are some modules where you'll always depend on a minimal version,
 either because of a bug or because of an API change. A good example would be
-[Test::More](https://metacpan.org/pod/Test::More) where version 0.88 introduced `done_testing()`.
+[Test::More](https://metacpan.org/pod/Test::More) where version 0.88 introduced `done_testing()` or
+[version](https://metacpan.org/pod/version) which strongly urges to set 0.77 as a minimum in your code.
 
 This test can be used to check that, whenever you use these modules, you also
 declare the minimum version.
@@ -25,7 +26,7 @@ Recommendation is to put it into your `xt` instead of your `t` directory.
 
 # USAGE
 
-## new( \[ ARGS \] )
+## new( ARGS )
 
 Returns a new `Test::RequiredMinimumDependencyVersion` instance. `new`
 takes a hash with its arguments.
@@ -52,21 +53,21 @@ to know the exact number of tests that will run in advance. Use
 `done_testing` from [Test::More](https://metacpan.org/pod/Test::More) if you call this test directly
 instead of a `plan`.
 
-`file_ok` returns something _true_ if all web links are reachable
-and _false_ otherwise.
+`file_ok` returns something _true_ if all checked dependencies are at least
+of the required minimal version and _false_ otherwise.
 
 ## all\_files\_ok( \[ @entries \] )
 
-Checks all the files under `@entries` by calling `pod_file_ok` on every
+Checks all the files under `@entries` by calling `file_ok` on every
 file. Directories are recursive searched for files. Everything not a file and
 not a directory (e.g. a symlink) is ignored. It calls `done_testing` or
 `skip_all` so you can't have already called `plan`.
 
-If `@entries` is empty default directories are searched for files
-containing Pod. The default directories are `blib`, or `lib` if it doesn't
+If `@entries` is empty default directories are searched for files.
+The default directories are `blib`, or `lib` if it doesn't
 exist, `bin` and `script`.
 
-&lt;all\_files\_ok> returns something _true_ if all files test ok and _false_
+`all_files_ok` returns something _true_ if all files test ok and _false_
 otherwise.
 
 # EXAMPLES
@@ -83,7 +84,7 @@ Check all files in the `bin`, `script` and `lib` directory.
 
     Test::RequiredMinimumDependencyVersion->new(
         module => {
-            'Test::More' => '0.88',
+            'version' => '0.77',
         },
     )->all_files_ok;
 
@@ -98,13 +99,9 @@ Check all files in the `bin`, `script` and `lib` directory.
     Test::RequiredMinimumDependencyVersion->new(
         module => {
             'Test::More' => '0.88',
+            'version'    => '0.77',
         },
-    )->all_pod_files_ok(qw(
-        corpus/hello
-        corpus/world.pl
-        lib
-        tools
-    ));
+    )->all_files_ok(qw(bin lib t xt corpus/hello_world.pl));
 
 ## Example 3 Call `file_ok` directly
 
@@ -120,12 +117,12 @@ Check all files in the `bin`, `script` and `lib` directory.
             'Test::More' => '0.88',
         },
     );
-    $trmdv->pod_file_ok('corpus/7_links.pod');
-    $trmdv->pod_file_ok('corpus/hello');
+    $trmdv->file_ok('t/00-load.t');
+    $trmdv->file_ok('xt/author/pod-links.t');
 
     done_testing();
 
-head1 SEE ALSO
+# SEE ALSO
 
 [Test::More](https://metacpan.org/pod/Test::More)
 
