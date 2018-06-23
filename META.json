@@ -1,5 +1,5 @@
 {
-   "abstract" : "Require a minimum version for your dependencies",
+   "abstract" : "require a minimum version for your dependencies",
    "author" : [
       "Sven Kirmess <sven.kirmess@kzone.ch>"
    ],

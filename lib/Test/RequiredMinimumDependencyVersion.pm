@@ -206,7 +206,7 @@ __END__
 
 =head1 NAME
 
-Test::RequiredMinimumDependencyVersion - Require a minimum version for your dependencies
+Test::RequiredMinimumDependencyVersion - require a minimum version for your dependencies
 
 =head1 VERSION
 
