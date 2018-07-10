@@ -28,8 +28,10 @@ on test => sub {
 on develop => sub {
     requires 'CPANPLUS';
     requires 'FindBin';
+    requires 'JSON::MaybeXS';
     requires 'Path::Tiny';
     requires 'Perl::Critic', '1.132';
+    requires 'Perl::Critic::MergeProfile';
     requires 'Perl::Critic::Policy::Bangs::ProhibitBitwiseOperators', '1.12';
     requires 'Perl::Critic::Policy::Bangs::ProhibitDebuggingModules', '1.12';
     requires 'Perl::Critic::Policy::Bangs::ProhibitFlagComments', '1.12';
@@ -113,6 +115,7 @@ on develop => sub {
     requires 'Perl::Critic::Policy::Variables::ProhibitUnusedVarsStricter', '0.102';
     requires 'Perl::Critic::Policy::Variables::ProhibitUselessInitialization', '0.02';
     requires 'Pod::Wordlist';
+    requires 'Test2::V0';
     requires 'Test::CPAN::Changes';
     requires 'Test::CPAN::Meta', '0.12';
     requires 'Test::CPAN::Meta::JSON';
@@ -131,6 +134,8 @@ on develop => sub {
     requires 'Test::Pod::Links';
     requires 'Test::Portability::Files';
     requires 'Test::Spelling', '0.12';
+    requires 'Test::Spelling::Comment', '0.003';
     requires 'Test::Version', '0.04';
+    requires 'XT::Util';
     requires 'lib';
 };
