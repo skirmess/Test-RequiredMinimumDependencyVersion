@@ -1,9 +1,10 @@
-[-Bangs::ProhibitNumberedNames]
 [ControlStructures::ProhibitPostfixControls]
 flowcontrol = BAIL_OUT skip
+
 [-ErrorHandling::RequireCarping]
 [-RegularExpressions::RequireDotMatchAnything]
 [-RegularExpressions::RequireExtendedFormatting]
 [-RegularExpressions::RequireLineBoundaryMatching]
+
 [Subroutines::RequireFinalReturn]
 terminal_funcs = BAIL_OUT

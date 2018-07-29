@@ -1,3 +1,2 @@
 [ControlStructures::ProhibitPostfixControls]
 flowcontrol = Carp::croak
-[-Subroutines::RequireArgUnpacking]
