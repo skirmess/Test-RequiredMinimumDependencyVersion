@@ -56,19 +56,22 @@ instead of a `plan`.
 `file_ok` returns something _true_ if all checked dependencies are at least
 of the required minimal version and _false_ otherwise.
 
-## all\_files\_ok( \[ @entries \] )
+## all\_files\_ok
 
-Checks all the files under `@entries` by calling `file_ok` on every
-file. Directories are recursive searched for files. Everything not a file and
-not a directory (e.g. a symlink) is ignored. It calls `done_testing` or
-`skip_all` so you can't have already called `plan`.
+Calls the `all_perl_files` method of [Test::XTFiles](https://metacpan.org/pod/Test::XTFiles) to get all the files to
+be tested. All files will be checked by calling `file_ok`.
 
-If `@entries` is empty default directories are searched for files.
-The default directories are `blib`, or `lib` if it doesn't
-exist, `bin` and `script`.
+It calls `done_testing` or `skip_all` so you can't have already called
+`plan`.
 
 `all_files_ok` returns something _true_ if all files test ok and _false_
 otherwise.
+
+Please see [XT::Files](https://metacpan.org/pod/XT::Files) for how to configure the files to be checked.
+
+WARNING: The API was changed with 0.003. Arguments to `all_files_ok`
+are now silently discarded and the method is now configured with
+[XT::Files](https://metacpan.org/pod/XT::Files).
 
 # EXAMPLES
 
@@ -90,18 +93,16 @@ Check all files in the `bin`, `script` and `lib` directory.
 
 ## Example 2 Check non-default directories or files
 
-    use 5.006;
-    use strict;
-    use warnings;
+Use the same test file as in Example 1 and create a `.xtfilesrc` config
+file in the root directory of your distribution.
 
-    use Test::RequiredMinimumDependencyVersion;
+    [Dirs]
+    module = lib
+    module = tools
+    module = corpus/hello
 
-    Test::RequiredMinimumDependencyVersion->new(
-        module => {
-            'Test::More' => '0.88',
-            'version'    => '0.77',
-        },
-    )->all_files_ok(qw(bin lib t xt corpus/hello_world.pl));
+    [Files]
+    module = corpus/my.pm
 
 ## Example 3 Call `file_ok` directly
 
@@ -149,7 +150,7 @@ Sven Kirmess <sven.kirmess@kzone.ch>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2018 by Sven Kirmess.
+This software is Copyright (c) 2018-2019 by Sven Kirmess.
 
 This is free software, licensed under:
 
