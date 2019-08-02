@@ -2,6 +2,8 @@ Revision history for Test-MinimumPrereqs
 
 {{$NEXT}}
 
+0.003  2019-08-02 12:51:14 UTC
+
   - API change: all_files_ok() no longer takes files or directories as
     arguments. The files to be tested is now obtained from XT::Files.
 

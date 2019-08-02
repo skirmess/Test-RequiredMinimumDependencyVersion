@@ -4,7 +4,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use Carp                ();
 use Perl::PrereqScanner ();
@@ -143,7 +143,7 @@ Test::RequiredMinimumDependencyVersion - require a minimum version for your depe
 
 =head1 VERSION
 
-Version 0.002
+Version 0.003
 
 =head1 SYNOPSIS
 

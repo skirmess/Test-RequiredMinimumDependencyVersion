@@ -4,7 +4,7 @@ Test::RequiredMinimumDependencyVersion - require a minimum version for your depe
 
 # VERSION
 
-Version 0.002
+Version 0.003
 
 # SYNOPSIS
 
