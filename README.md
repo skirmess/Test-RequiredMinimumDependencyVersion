@@ -75,9 +75,9 @@ are now silently discarded and the method is now configured with
 
 # EXAMPLES
 
-## Example 1 Default Usage
+## Example 1 Default usage
 
-Check all files in the `bin`, `script` and `lib` directory.
+Check all files returned by [XT::Files](https://metacpan.org/pod/XT::Files).
 
     use 5.006;
     use strict;
@@ -125,7 +125,7 @@ file in the root directory of your distribution.
 
 # SEE ALSO
 
-[Test::More](https://metacpan.org/pod/Test::More)
+[Test::More](https://metacpan.org/pod/Test::More), [XT::Files](https://metacpan.org/pod/XT::Files)
 
 # SUPPORT
 

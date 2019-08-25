@@ -214,9 +214,9 @@ L<XT::Files>.
 
 =head1 EXAMPLES
 
-=head2 Example 1 Default Usage
+=head2 Example 1 Default usage
 
-Check all files in the F<bin>, F<script> and F<lib> directory.
+Check all files returned by L<XT::Files>.
 
     use 5.006;
     use strict;
@@ -264,7 +264,7 @@ file in the root directory of your distribution.
 
 =head1 SEE ALSO
 
-L<Test::More|Test::More>
+L<Test::More|Test::More>, L<XT::Files>
 
 =head1 SUPPORT
 
