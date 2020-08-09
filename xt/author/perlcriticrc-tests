@@ -2,6 +2,7 @@
 flowcontrol = BAIL_OUT die skip
 
 [-ErrorHandling::RequireCarping]
+[-Freenode::DiscouragedModules]
 [-RegularExpressions::RequireDotMatchAnything]
 [-RegularExpressions::RequireExtendedFormatting]
 [-RegularExpressions::RequireLineBoundaryMatching]
