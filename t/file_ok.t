@@ -24,8 +24,8 @@ sub main {
         my $obj = $class->new( module => { 'XYZ' => '0.001' } );
 
         #
-        like( exception { $obj->file_ok() },      qr{usage: file_ok[(]FILE[)]}, 'file_ok() throws an exception with too few arguments' );
-        like( exception { $obj->file_ok(undef) }, qr{usage: file_ok[(]FILE[)]}, '... undef for a file name' );
+        like( exception { $obj->file_ok() },                        qr{usage: file_ok[(]FILE[)]}, 'file_ok() throws an exception with too few arguments' );
+        like( exception { $obj->file_ok(undef) },                   qr{usage: file_ok[(]FILE[)]}, '... undef for a file name' );
         like( exception { $obj->file_ok( 'file', 'name', 'abc' ) }, qr{usage: file_ok[(]FILE[)]}, '... too many arguments' );
 
         #
