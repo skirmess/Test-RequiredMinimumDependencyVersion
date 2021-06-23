@@ -1,8 +1,0 @@
-Moose requires perl 5.8.3
-
-Perl::PrereqScanner 1.023 requires PPI 1.215
-  - PPI 1.236 requires ExtUtils::MakeMaker 6.59
-    - Strawberry Perl 5.8.9 shipps with ExtUtils::MakeMaker 6.54
-    - Strawberry Perl 5.10.0 and 5.10.1 shipps with ExtUtils::MakeMaker 6.56
-      - ExtUtils::MakeMaker 7.10 does not build on Strawberry
-      - ExtUtils::MakeMaker 7.34 does not build on Strawberry
