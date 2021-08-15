@@ -12,9 +12,6 @@ use Test::TempDir::Tiny;
 
 use Test::RequiredMinimumDependencyVersion;
 
-use FindBin qw($RealBin);
-use lib "$RealBin/../corpus/lib";
-
 main();
 
 sub main {

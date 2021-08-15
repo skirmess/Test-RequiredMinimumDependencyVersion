@@ -15,7 +15,7 @@ Version 0.003
 
 There are some modules where you'll always depend on a minimal version,
 either because of a bug or because of an API change. A good example would be
-[Test::More](https://metacpan.org/pod/Test::More) where version 0.88 introduced `done_testing()` or
+[Test::More](https://metacpan.org/pod/Test%3A%3AMore) where version 0.88 introduced `done_testing()` or
 [version](https://metacpan.org/pod/version) which strongly urges to set 0.77 as a minimum in your code.
 
 This test can be used to check that, whenever you use these modules, you also
@@ -47,10 +47,10 @@ to enforce and the minimal version is its value.
 ## file\_ok( FILENAME )
 
 This will run a test for parsing the file with
-[Perl::PrereqScanner](https://metacpan.org/pod/Perl::PrereqScanner) and another test for every
+[Perl::PrereqScanner](https://metacpan.org/pod/Perl%3A%3APrereqScanner) and another test for every
 `module` you specified if it is used in this file. It is therefore unlikely
 to know the exact number of tests that will run in advance. Use
-`done_testing` from [Test::More](https://metacpan.org/pod/Test::More) if you call this test directly
+`done_testing` from [Test::More](https://metacpan.org/pod/Test%3A%3AMore) if you call this test directly
 instead of a `plan`.
 
 `file_ok` returns something _true_ if all checked dependencies are at least
@@ -58,7 +58,7 @@ of the required minimal version and _false_ otherwise.
 
 ## all\_files\_ok
 
-Calls the `all_perl_files` method of [Test::XTFiles](https://metacpan.org/pod/Test::XTFiles) to get all the files to
+Calls the `all_perl_files` method of [Test::XTFiles](https://metacpan.org/pod/Test%3A%3AXTFiles) to get all the files to
 be tested. All files will be checked by calling `file_ok`.
 
 It calls `done_testing` or `skip_all` so you can't have already called
@@ -67,17 +67,17 @@ It calls `done_testing` or `skip_all` so you can't have already called
 `all_files_ok` returns something _true_ if all files test ok and _false_
 otherwise.
 
-Please see [XT::Files](https://metacpan.org/pod/XT::Files) for how to configure the files to be checked.
+Please see [XT::Files](https://metacpan.org/pod/XT%3A%3AFiles) for how to configure the files to be checked.
 
 WARNING: The API was changed with 0.003. Arguments to `all_files_ok`
 are now silently discarded and the method is now configured with
-[XT::Files](https://metacpan.org/pod/XT::Files).
+[XT::Files](https://metacpan.org/pod/XT%3A%3AFiles).
 
 # EXAMPLES
 
 ## Example 1 Default usage
 
-Check all files returned by [XT::Files](https://metacpan.org/pod/XT::Files).
+Check all files returned by [XT::Files](https://metacpan.org/pod/XT%3A%3AFiles).
 
     use 5.006;
     use strict;
@@ -125,7 +125,7 @@ file in the root directory of your distribution.
 
 # SEE ALSO
 
-[Test::More](https://metacpan.org/pod/Test::More), [XT::Files](https://metacpan.org/pod/XT::Files)
+[Test::More](https://metacpan.org/pod/Test%3A%3AMore), [XT::Files](https://metacpan.org/pod/XT%3A%3AFiles)
 
 # SUPPORT
 
