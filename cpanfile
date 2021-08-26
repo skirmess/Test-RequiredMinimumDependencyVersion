@@ -144,6 +144,7 @@ on develop => sub {
 feature 'dzil', 'Dist::Zilla' => sub {
 on develop => sub {
         requires 'App::Prove';
+        requires 'CPAN::Meta::Prereqs';
         requires 'CPAN::Meta::Prereqs::Filter';
         requires 'CPAN::Meta::Requirements';
         requires 'Config::MVP', '2.200012';
@@ -159,7 +160,10 @@ on develop => sub {
         requires 'Dist::Zilla::Plugin::CheckPrereqsIndexed';
         requires 'Dist::Zilla::Plugin::CheckSelfDependency';
         requires 'Dist::Zilla::Plugin::CheckStrictVersion';
+        requires 'Dist::Zilla::Plugin::Code::AfterBuild';
+        requires 'Dist::Zilla::Plugin::Code::FileMunger';
         requires 'Dist::Zilla::Plugin::Code::MetaProvider';
+        requires 'Dist::Zilla::Plugin::Code::PrereqSource';
         requires 'Dist::Zilla::Plugin::ConfirmRelease';
         requires 'Dist::Zilla::Plugin::ExecDir';
         requires 'Dist::Zilla::Plugin::FinderCode';
@@ -180,7 +184,6 @@ on develop => sub {
         requires 'Dist::Zilla::Plugin::ManifestSkip';
         requires 'Dist::Zilla::Plugin::MetaJSON';
         requires 'Dist::Zilla::Plugin::MetaNoIndex';
-        requires 'Dist::Zilla::Plugin::MetaProvides::Package';
         requires 'Dist::Zilla::Plugin::MetaYAML';
         requires 'Dist::Zilla::Plugin::NextRelease';
         requires 'Dist::Zilla::Plugin::PromptIfStale';
@@ -201,7 +204,6 @@ on develop => sub {
         requires 'Dist::Zilla::Role::FileFinderUser';
         requires 'Dist::Zilla::Role::FileGatherer';
         requires 'Dist::Zilla::Role::FileMunger';
-        requires 'Dist::Zilla::Role::PPI';
         requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
         requires 'Dist::Zilla::Role::PluginBundle::Easy';
         requires 'Dist::Zilla::Role::PrereqSource';
@@ -220,8 +222,8 @@ on develop => sub {
         requires 'Module::Metadata';
         requires 'Moose', '0.99';
         requires 'Moose::Role';
+        requires 'MooseX::Types::Moose';
         requires 'Perl::MinimumVersion', '1.26';
-        requires 'Perl::PrereqScanner', '1.016';
         requires 'Perl::Tidy';
         requires 'Safe::Isa';
         requires 'Scalar::Util';

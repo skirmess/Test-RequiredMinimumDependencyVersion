@@ -25,10 +25,6 @@ no_index:
     - corpus
     - t
     - xt
-provides:
-  Test::RequiredMinimumDependencyVersion:
-    file: lib/Test/RequiredMinimumDependencyVersion.pm
-    version: '0.003'
 requires:
   Carp: '0'
   Perl::PrereqScanner: '0'

@@ -51,12 +51,6 @@
          }
       }
    },
-   "provides" : {
-      "Test::RequiredMinimumDependencyVersion" : {
-         "file" : "lib/Test/RequiredMinimumDependencyVersion.pm",
-         "version" : "0.003"
-      }
-   },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
