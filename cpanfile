@@ -13,17 +13,21 @@ on configure => sub {
 };
 
 on test => sub {
+    requires 'Cwd';
+    requires 'Exporter', '5.57';
+    requires 'File::Basename';
+    requires 'File::Path';
+    requires 'File::Spec';
     requires 'Test::Builder::Tester';
     requires 'Test::Fatal';
     requires 'Test::MockModule';
     requires 'Test::More', '0.88';
-    requires 'Test::TempDir::Tiny';
     requires 'constant';
     requires 'lib';
 };
 
 on develop => sub {
-    requires 'CPANPLUS';
+    requires 'CPAN';
     requires 'JSON::PP';
     requires 'Module::Info';
     requires 'Path::Tiny';
@@ -161,8 +165,7 @@ on develop => sub {
         requires 'Dist::Zilla::Plugin::CheckSelfDependency';
         requires 'Dist::Zilla::Plugin::CheckStrictVersion';
         requires 'Dist::Zilla::Plugin::Code::AfterBuild';
-        requires 'Dist::Zilla::Plugin::Code::FileMunger';
-        requires 'Dist::Zilla::Plugin::Code::MetaProvider';
+        requires 'Dist::Zilla::Plugin::Code::FileMunger', '0.007';
         requires 'Dist::Zilla::Plugin::Code::PrereqSource';
         requires 'Dist::Zilla::Plugin::ConfirmRelease';
         requires 'Dist::Zilla::Plugin::ExecDir';
@@ -179,7 +182,7 @@ on develop => sub {
         requires 'Dist::Zilla::Plugin::Git::Tag';
         requires 'Dist::Zilla::Plugin::GithubMeta';
         requires 'Dist::Zilla::Plugin::License';
-        requires 'Dist::Zilla::Plugin::MakeMaker::Awesome';
+        requires 'Dist::Zilla::Plugin::MakeMaker::Awesome', '0.49';
         requires 'Dist::Zilla::Plugin::Manifest';
         requires 'Dist::Zilla::Plugin::ManifestSkip';
         requires 'Dist::Zilla::Plugin::MetaJSON';
@@ -204,7 +207,6 @@ on develop => sub {
         requires 'Dist::Zilla::Role::FileFinderUser';
         requires 'Dist::Zilla::Role::FileGatherer';
         requires 'Dist::Zilla::Role::FileMunger';
-        requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
         requires 'Dist::Zilla::Role::PluginBundle::Easy';
         requires 'Dist::Zilla::Role::PrereqSource';
         requires 'Dist::Zilla::Role::TestRunner';
@@ -219,6 +221,7 @@ on develop => sub {
         requires 'File::pushd';
         requires 'List::Util';
         requires 'Module::CPANfile', '1.1004';
+        requires 'Module::CoreList', '2.77';
         requires 'Module::Metadata';
         requires 'Moose', '0.99';
         requires 'Moose::Role';
