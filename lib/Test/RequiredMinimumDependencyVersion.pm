@@ -1,8 +1,24 @@
-package Test::RequiredMinimumDependencyVersion;
+# vim: ts=4 sts=4 sw=4 et: syntax=perl
+#
+# Copyright (c) 2018-2022 Sven Kirmess
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 use 5.006;
 use strict;
 use warnings;
+
+package Test::RequiredMinimumDependencyVersion;
 
 our $VERSION = '0.003';
 
@@ -10,7 +26,7 @@ use Carp                ();
 use Perl::PrereqScanner ();
 use Test::Builder       ();
 use Test::XTFiles       ();
-use version 0.77 ();
+use version 0.77        ();
 
 my $TEST = Test::Builder->new();
 
@@ -287,14 +303,4 @@ L<https://github.com/skirmess/Test-RequiredMinimumDependencyVersion>
 
 Sven Kirmess <sven.kirmess@kzone.ch>
 
-=head1 COPYRIGHT AND LICENSE
-
-This software is Copyright (c) 2018-2021 by Sven Kirmess.
-
-This is free software, licensed under:
-
-  The (two-clause) FreeBSD License
-
 =cut
-
-# vim: ts=4 sts=4 sw=4 et: syntax=perl

@@ -2,6 +2,9 @@ Revision history for Test-MinimumPrereqs
 
 {{$NEXT}}
 
+  - Switch license to the ISC license
+  - use redefine() instead of mock() from Test::MockModule
+
 0.003  2019-08-02 12:51:14 UTC
 
   - API change: all_files_ok() no longer takes files or directories as
